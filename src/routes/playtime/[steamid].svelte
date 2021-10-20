@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
   export async function preload(page) {
     const res = await this.fetch(
-      `../playtime.json?${new URLSearchParams({
+      `playtime.json?${new URLSearchParams({
         steamid: page.params.steamid,
       })}`
     );
@@ -39,7 +39,9 @@
         labels: {
           enabled: true,
           formatter: (t) => {
-            return `${t.data.group}: ${((100 * t.value) / total).toFixed(1)}%`;
+            return `${t.data.group}: ${((100 * t.value) / total).toFixed(
+              1
+            )}% - ${t.value | 0}h`;
           },
         },
         sortFunction: (a, b) => {
