@@ -34,10 +34,9 @@ export async function get(req: Request, res: ServerResponse) {
   const total = playtimes.reduce((t, i) => (t += i.playtime_forever), 0);
   let top: PlayerServiceOwnedGame[] = playtimes;
   if (playtimes.length > 10) {
-    for (let i = 0, c = 0; i < playtimes.length; i++) {
-      c += playtimes[i].playtime_forever;
+    for (let i = 0; i < playtimes.length; i++) {
       if (
-        (c / total > 0.9 || playtimes[i].playtime_forever / total < 0.01) &&
+        playtimes[i].playtime_forever / total < 0.01 &&
         i !== playtimes.length - 1
       ) {
         // top x
