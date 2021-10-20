@@ -12,3 +12,7 @@ export type PlayerServiceOwnedGame = {
   name: string;
   playtime_forever: number;
 };
+
+export type PlaytimeResponse = { top: [PlayerServiceOwnedGame] };
+
+export type ServerError = { error: string; message: string };
