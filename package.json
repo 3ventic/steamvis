@@ -1,7 +1,7 @@
 {
   "name": "steamvis",
   "description": "Visualize Steam playtime",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
@@ -14,7 +14,8 @@
     "compression": "^1.7.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "@carbon/charts": "^0.50.8"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
